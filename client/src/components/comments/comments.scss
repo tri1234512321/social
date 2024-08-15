@@ -1,0 +1,98 @@
+@import "../../style.scss";
+
+.comments {
+  font-size: 13px;
+  padding:5px 0px;
+  @include themify($themes) {
+    .img {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .write{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      margin: 20px 15px;
+
+      input{
+        outline: 1px solid themed("border");
+        flex:5;
+        padding: 10px;
+        border-radius: 99px;
+        height: 30px;
+        background-color: transparent;
+        color: themed("textColor");
+        } 
+
+      // button{
+      //   border: none;
+      //   background-color: #5271ff;
+      //   color: white;
+      //   padding: 10px;
+      //   cursor: pointer;
+      //   border-radius: 3px;
+      // }
+    }
+    .scroll{
+      max-height: 250px;
+      overflow-y: scroll;
+      
+      /* width */
+      &::-webkit-scrollbar {
+        width: 7px;
+      }
+
+      /* Track */
+      &::-webkit-scrollbar-track {
+        background: #ffffff;
+      }
+
+      /* Handle */
+      &::-webkit-scrollbar-thumb {
+        background: #e5e5e5;
+      }
+
+      /* Handle on hover */
+      &::-webkit-scrollbar-thumb:hover {
+        background: #c9c9c9;
+      }
+
+      .comment {
+        margin: 15px 15px;
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+
+        .info {
+          flex:5;
+          display: flex;
+          gap:0;
+          flex-direction: column;
+          align-items: flex-start;
+          background: #ececec;
+          border-radius: 15px;
+          padding: 5px 10px 5px 10px;
+
+          span {
+            font-weight: 500;
+          }
+
+          p{
+            color:themed("textColorSoft")
+          }
+        }
+
+        .date{
+          flex:1;
+          align-self: center;
+          color: gray;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}

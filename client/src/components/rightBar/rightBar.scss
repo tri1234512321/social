@@ -1,0 +1,122 @@
+@import "../../style.scss";
+
+.rightBar {
+  @include themify($themes) {
+    flex: 2;
+    position: sticky;
+    top: 50px;
+    height: calc(100vh - 50px);
+    background-color: themed("bgSoft");
+
+    @include mobile{
+      display: none;
+    }
+    @include tablet{
+      display: none;
+    }
+
+    overflow-y: scroll;
+      
+    /* width */
+    &::-webkit-scrollbar {
+      width: 7px;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+      background: #ffffff;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background: #e5e5e5;
+    }
+
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+      background: #c9c9c9;
+    }
+
+    .container {
+      hr {
+        margin: 0 10px;
+        // border:#828282 solid 0.5px
+      }
+      .item {
+        padding: 10px 0;
+
+        .user {
+          display: flex;
+          align-items: center;
+          height: fit-content;
+          justify-content: space-between;
+          margin: 0px 0px;
+          padding: 10px 10px;
+          border-radius: 9px;
+
+          .userInfo {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            width: 100%;
+            position: relative;
+
+            img {
+              width: 30px;
+              height: 30px;
+              border-radius: 50%;
+              object-fit: cover;
+            }
+
+            .online {
+              width: 10px;
+              height: 10px;
+              border: white 2px solid;
+              border-radius: 50%;
+              background-color: limegreen;
+              position: absolute;
+              top: 22px;
+              left: 22px;
+            }
+
+            p {
+              color: themed("textColorSoft");
+            }
+
+            span {
+              font-weight: 500;
+              color: themed("textColor");
+              font-size: 14px;
+              
+            }
+          }
+
+          .buttons {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            button {
+              border: none;
+              padding: 5px;
+              color: white;
+              cursor: pointer;
+
+              &:first-child {
+                background-color: #5271ff;
+              }
+
+              &:last-child {
+                background-color: #f0544f;
+              }
+            }
+          }
+        }
+
+        .user:hover {
+          background: #e3e3e3;
+        }
+      }
+    }
+  }
+}
